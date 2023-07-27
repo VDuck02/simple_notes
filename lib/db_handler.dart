@@ -44,7 +44,6 @@ class DBHelper {
   Future<List<NoteModel>> getDataList() async {
     await db;
 
-    //String sql = 'SELECT * FROM mynote';
     final List<Map<String, Object?>> result =
         await _db!.rawQuery('SELECT * FROM mynote');
     return result.map((e) => NoteModel.fromMap(e)).toList();
